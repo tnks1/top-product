@@ -1,0 +1,25 @@
+Hello! 
+
+Instructions on running the code: 
+0. pre-requirements: python3 
+1. unzip this file 
+2. navigate to the root for the unzipped folder 
+3. create a virtual environment using:  python3 -m venv ./env 
+4. activate the virtual environment using: source ./env/bin/activate
+5. install all required packages using: pip install -r requirements.txt
+6. run the app using: uvicorn app.main:app --reload
+
+known bugs: 
+- if the app did not work due to python-multipart not being found, deactivate from the env by using: deactivate, and activate the env again using:  source ./env/bin/activate
+
+Testing: 
+1. running a test via an api client: 
+1.1. use the test_data_happy_scenario.csv file in app/test folder
+2. running pytests: 
+2.1 navigate to the root directory and install requests package using:  pip3 install requests -t .
+2.2 run  python -m pytest app/tests/
+
+
+
+Task 2: 
+To tackle the timeout issues that may happen from a process that is taking so much time to finish, I would use a pub/sub messaging pattern. A pub/sub will enable the system to communicate asynchronously. This means we can manage processes and workflows to work in parallel where we distribute tasks within workers, at the same time, this ensures the scalability of our system. We can set it so we have a publisher that is subscribed to a "top-rated-product" topic. Messages coming to this topic can be shared (by forwarding) with its publishers. 

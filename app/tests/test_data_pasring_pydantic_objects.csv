@@ -1,0 +1,4 @@
+id,product_name,customer_average_rating
+string not int,123, 5.0
+154,this is my text, 3.287326test number
+12,"i'm normal", 1.8
